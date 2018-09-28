@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+         point="org.eclipse.ui.commands">
+         <category
+	            name="Export"
+	            id="com.mj.exportfile.export.category">
+	      </category>
+	      <command
+	            name="Export Command"
+	            categoryId="com.mj.exportfile.export.category"
+	            id="com.mj.exportfile.commands.exportCommand">
+	      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+         <handler
+            commandId="com.mj.exportfile.commands.exportCommand"
+            class="com.mj.exportfile.handlers.ExportHandler">
+      	 </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+         <key
+            commandId="com.mj.exportfile.commands.exportCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="Alt+E"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      	</key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Export File"
+               mnemonic="M"
+               id="com.mj.exportfile.menus.sampleMenu">
+            <command
+                  commandId="com.mj.exportfile.commands.exportCommand"
+                  mnemonic="S"
+                  id="com.mj.exportfile.menus.exportCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.mj.exportfile.toolbars.exportToolbar">
+            <command
+                  commandId="com.mj.exportfile.commands.exportCommand"
+                  icon="icons/exportfile.png"
+                  tooltip="Export File"
+                  id="com.mj.exportfile.toolbars.exportCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Open Category"
+            id="com.mj.exportfile.commands.opencategory">
+      </category>
+      <command
+            name="Open Command"
+            categoryId="com.mj.exportfile.commands.opencategory"
+            id="com.mj.exportfile.commands.openCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.mj.exportfile.commands.openCommand"
+            class="com.mj.exportfile.handlers.OpenHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.mj.exportfile.commands.openCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="Alt+R"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Open File"
+               mnemonic="M"
+               id="com.mj.exportfile.menus.openfileMenu">
+            <command
+                  commandId="com.mj.exportfile.commands.openCommand"
+                  mnemonic="S"
+                  id="com.mj.exportfile.menus.openFileCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.mj.exportfile.toolbars.openFileToolbar">
+            <command
+                  commandId="com.mj.exportfile.commands.openCommand"
+                  icon="icons/folderopen.gif"
+                  tooltip="Open File"
+                  id="com.mj.exportfile.toolbars.openCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+</plugin>
