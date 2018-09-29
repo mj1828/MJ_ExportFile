@@ -56,6 +56,9 @@ public class ExportHandler extends AbstractHandler {
 
 		String workspace = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();// 获取工作空间
 		String exportPath = prop.getProperty("ExportPath"); // 获取配置文件中的文件导出路径
+		if (System.getProperties().getProperty("os.name").contains("Windows")) {
+			exportPath = "D:/" + exportPath;
+		}
 		IWorkbench workbench = PlatformUI.getWorkbench(); // 获取工作台
 		IWorkbenchWindow win = workbench.getActiveWorkbenchWindow(); // 获取工作台窗口
 

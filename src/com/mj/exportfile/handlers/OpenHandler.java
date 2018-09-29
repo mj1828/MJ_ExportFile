@@ -58,7 +58,9 @@ public class OpenHandler extends AbstractHandler {
 
 		String workspace = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();// 获取工作空间
 		String exportPath = prop.getProperty("ExportPath");
-
+		if (System.getProperties().getProperty("os.name").contains("Windows")) {
+			exportPath = "D:/" + exportPath;
+		}
 		ISelectionService selectionService = Workbench.getInstance().getActiveWorkbenchWindow().getSelectionService();
 		ISelection selection = selectionService.getSelection();
 

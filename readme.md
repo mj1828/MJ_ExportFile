@@ -6,3 +6,6 @@ https://github.com/sinmahod/exportFile
 ```
 
 > 本项目为Eclipse插件，导出编译好的class到指定目录下
+
+## 遗留问题
+1. 大部分Eclipse导入插件不显示，待解决
